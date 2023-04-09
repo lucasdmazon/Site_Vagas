@@ -5,6 +5,9 @@ from django.utils import timezone
 class Categoria(models.Model):
     nome = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.nome
+
 
 class Vaga(models.Model):
     titulo = models.CharField(max_length=255)
@@ -18,3 +21,10 @@ class Vaga(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     curtir = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.titulo
+
+"""
+user: administrador
+password: 123456
+"""
